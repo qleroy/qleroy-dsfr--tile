@@ -43,7 +43,8 @@ const Styles = styled.div<QleroyTileDsfrStylesProps>`
 export default function QleroyTileDsfr(props: QleroyTileDsfrProps) {
   // height and width are the height and width of the DOM element as it exists in the dashboard.
   // There is also a `data` prop, which is, of course, your DATA 🎉
-  const { data, height, width, tileDescription, tileDetail, pictogramCategory, pictogramName } = props;
+  //const { data, height, width, tileDescription, tileDetail, pictogramCategory, pictogramName } = props;
+  const { height, width, tileUrl, tileTitle, tileDescription, tileDetail, pictogramPath } = props;
 
   const rootElem = createRef<HTMLDivElement>();
 
@@ -56,7 +57,8 @@ export default function QleroyTileDsfr(props: QleroyTileDsfrProps) {
 
   console.log('Plugin props', props);
 
-  const hrefPictogram = `/static/assets/dsfr/dist/artwork/pictograms/${pictogramCategory}/${pictogramName}.svg`;
+  //const hrefPictogram = `/static/assets/dsfr/artwork/pictograms/${pictogramCategory}/${pictogramName}.svg`;
+  const hrefPictogram = `/static/assets/dsfr/artwork/pictograms/${pictogramPath}.svg`;
 
   return (
     <Styles
@@ -70,7 +72,7 @@ export default function QleroyTileDsfr(props: QleroyTileDsfrProps) {
         <div className="fr-tile__body">
           <div className="fr-tile__content">
             <h3 className="fr-tile__title">
-              <a href="#">Intitulé de la tuile</a>
+              <a href={tileUrl}>{tileTitle}</a>
             </h3>
             <p className="fr-tile__desc">{tileDescription}</p>
             <p className="fr-tile__detail">{tileDetail}</p>

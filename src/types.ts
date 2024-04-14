@@ -27,8 +27,11 @@ export interface QleroyTileDsfrStylesProps {
 
 interface QleroyTileDsfrCustomizeProps {
   headerText: string;
+  tileUrl: string;
+  tileTitle: string;
   tileDescription: string;
   tileDetail: string;
+  pictogramPath: string;
   pictogramCategory: string;
   pictogramName: string;
 }

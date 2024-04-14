@@ -49,7 +49,18 @@ export default function transformProps(chartProps: ChartProps) {
    * be seen until restarting the development server.
    */
   const { width, height, formData, queriesData } = chartProps;
-  const { boldText, headerFontSize, headerText, tileDescription, tileDetail, pictogramCategory, pictogramName } = formData;
+  const {
+    boldText,
+    headerFontSize,
+    headerText,
+    tileUrl,
+    tileTitle,
+    tileDescription,
+    tileDetail,
+    pictogramPath,
+    pictogramCategory,
+    pictogramName
+  } = formData;
   const data = queriesData[0].data as TimeseriesDataRecord[];
 
   console.log('formData via TransformProps.ts', formData);
@@ -62,8 +73,11 @@ export default function transformProps(chartProps: ChartProps) {
     boldText,
     headerFontSize,
     headerText,
+    tileUrl,
+    tileTitle,
     tileDescription,
     tileDetail,
+    pictogramPath,
     pictogramCategory,
     pictogramName,
   };
